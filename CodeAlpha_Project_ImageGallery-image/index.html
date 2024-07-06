@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styleig.css">
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <h1>IMAGE GALLERY</h1>
+
+    <div class="searchbar">
+        <form class="searchbaritem">
+            <input type="text" id="search" placeholder="search..">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </form>
+    </div>
+    
+    <div class="gallery" id="gallery">
+    
+      <div class="img1"><img src="image/OIP (4).jpeg"><h6>anime</h6></div>
+      <div class="img1"><img src="image/OIP (3).jpeg"><h6>groot</h6></div>
+      <div class="img1"><img src="image/OIP (2).jpeg"><h6>dog</h6></div>
+      <div class="img1"><img src="image/OIP (1).jpeg"><h6>tiger</h6></div>
+      <div class="img1"><img src="image/e1f0e9efa51687ea731a5a05fb76058d.jpg"><h6>anime jjk</h6></div>
+      <div class="img1"><img src="image/d0c600225c0c7180cdc5e01d3432b915.jpg"><h6>anime ds</h6></div>
+      <div class="img1"><img src="image/895122e25952082b5cf918ed887e602e.jpg"><h6>anime jjk</h6></div>
+      <div class="img1"><img src="image/4f516902cf81e2c76fe9424b9c5eff02.jpg"><h6>anime jjk</h6> </div>
+      <div class="img1"><img src="image/4084780614a0308288f32ed6002f82af.jpg"><h6>anime dog</h6></div>
+      <div class="img1"><img src="image/34c85e9fdb36bca00af78f9515013f3f.jpg"><h6>anime jjk gojo</h6></div>
+      <div class="img1"><img src="image/07217c729fc9d4e2ef3f3bf6ed145191.jpg"><h6>anime groot</h6></div>
+      <div class="img1"><img src="image/06e8602c84ed4b9e22759464bbd25264.jpg"><h6>anime line</h6></div>
+    </div>
+
+    <script>
+        var imgContainer=document.getElementById("gallery")
+        var search = document.getElementById("search")
+        var imglist = imgContainer.querySelectorAll("div")
+        console.log(search)
+
+        search.addEventListener("keyup",function(){
+            var enteredValue = event.target.value.toUpperCase()
+
+            for(var i=0;i<imglist.length;i++){
+                var imgname=imglist[i].querySelector("h6").textContent
+                if(imgname.toUpperCase().indexOf(enteredValue)<0){
+                   imglist[i].style.display="none"
+                }
+                else{
+                    imglist[i].style.display="block"
+
+                }
+            }
+
+        })
+        
+    </script>
+
+    
+    
+</body>
+</html>
